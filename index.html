@@ -16,53 +16,157 @@
 </head>
 
 <body class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://blog.vepo.dev">blog.vepo.dev</a>
+            <a class="navbar-brand" href="https://blog.vepo.dev">Victor Osório</a>
         </div>
     </nav>
     <h1>Calculadora PJ x CLT</h1>
-    <div class="container-fluid border rounded">
-        <h2>CLT</h2>
-        <form>
-            <div>
-                Salário mínimo: R$<span id="spnSalarioMinimo"></span>
-            </div>
-            <div class="mb-3">
-                <label for="txtCltSalario" class="form-label">Salário</label>
-                <div class="input-group">
-                    <div class="input-group-text">R$</div>
-                    <input type="number" class="form-control" id="txtCltSalario" placeholder="Insira o salário">
-                    <span class="input-group-text">.00</span>
+    <div class="row">
+        <div class="col-sm-6 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    Salário Mínimo
+                </div>
+                <div class="card-body">
+                    R$<span id="spnSalarioMinimo"></span>
                 </div>
             </div>
-        </form>
-        <div class="row">
-            <div class="col-sm-6 mb-3">
-                <div class="card">
-                    <div class="card-header">
-                        Valores
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mb-3">
+            <div class="container-fluid border rounded">
+                <h2>CLT</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="txtCLTSalario" class="form-label">Salário</label>
+                        <div class="input-group">
+                            <div class="input-group-text">R$</div>
+                            <input type="number" class="form-control" id="txtCLTSalario" placeholder="Insira o salário">
+                            <span class="input-group-text">.00</span>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">#Salário Minimos: <span id="spnQtdSalarioMinimos"></span></li>
-                        <li class="list-group-item">Bonus Férias: R$<span id="spnBonusFerias"></span></li>
-                        <li class="list-group-item">13º Salário: R$<span id="spnDecimoTerceiro"></span></li>
-                        <li class="list-group-item">Salário anual: R$<span id="spnSalarioAnual"></span></li>
-                    </ul>
+                </form>
+                <div class="row">
+                    <div class="col-sm-12 mb-3">
+                        <h2>Observações</h2>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                CLT provê uma série de benecicios como multa sobre o FGTS, 13º Salário, Férias
+                                Remuneradas, Bonus sobre Férias, aviso prévio.
+                            </li>
+                            <li class="list-group-item">
+                                O FGTS não está descontado do salário líquido pois pode ser usado para abatimentos de
+                                financiamento imobiliário, pois o intuito dessa calculadora é calcular o aumento de
+                                patrimômio.
+                            </li>
+                            <li class="list-group-item">
+                                Em caso de demissão sem justa causa, o empregador deve pagar uma multa ao empregado de
+                                40% do valor do FGTS.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                Valores
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">#Salário Minimos: <span id="spnCLTQtdSalarioMinimos"></span>
+                                </li>
+                                <li class="list-group-item">Bonus Férias: R$<span id="spnCLTBonusFerias"></span></li>
+                                <li class="list-group-item">13º Salário: R$<span id="spnCLTDecimoTerceiro"></span></li>
+                                <li class="list-group-item">Salário anual: R$<span id="spnCLTSalarioAnual"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                Imposto
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Faixa: <span id="spnCLTIRFaixa"></span></li>
+                                <li class="list-group-item">Imposto: R$<span id="spnCLTIRDesconto"></span></li>
+                                <li class="list-group-item">Salário líquido: R$<span id="spnCLTIRSalarioLiquido"></span>
+                                </li>
+                                <li class="list-group-item">Salário anual liquido: R$<span
+                                        id="spnCLTIRSalarioLiquidoAnual"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 mb-3">
-                <div class="card">
-                    <div class="card-header">
-                        Imposto
+        </div>
+        <div class="col-sm-6 mb-3">
+            <div class="container-fluid border rounded">
+                <h2>PJ</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="txtPJSalario" class="form-label">Remuneração mensal</label>
+                        <div class="input-group">
+                            <div class="input-group-text">R$</div>
+                            <input type="number" class="form-control" id="txtPJSalario"
+                                placeholder="Insira a remuneração mensal">
+                            <span class="input-group-text">.00</span>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Faixa: <span id="spnIRFaixa"></span></li>
-                        <li class="list-group-item">Imposto: R$<span id="spnIRDesconto"></span></li>
-                        <li class="list-group-item">Salário líquido: R$<span id="spnIRSalarioLiquido"></span></li>
-                        <li class="list-group-item">Salário anual liquido: R$<span id="spnIRSalarioLiquidoAnual"></span>
-                        </li>
-                    </ul>
+                </form>
+                <div class="row">
+                    <div class="col-sm-12 mb-3">
+                        <h2>Observações</h2>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                O cálculo será feito considerando 11 meses trabalhados e 1 mês de férias
+                            </li>
+                            <li class="list-group-item">
+                                Valores negativos devem ser descontados do salário para provisões
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                Valores
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">#Salário Minimos: <span id="spnPJQtdSalarioMinimos"></span>
+                                </li>
+                                <li class="list-group-item">Salário anual: R$<span id="spnPJSalarioAnual"></span></li>
+                                <li class="list-group-item">Provisão Férias: R$<span id="spnPJFerias"></span></li>
+                                <li class="list-group-item">Provisão 13º Salário: R$<span
+                                        id="spnPJDecimoTerceiro"></span></li>
+                                <li class="list-group-item">Salário Líquido: R$<span id="spnPJSalarioLiquido"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                Imposto
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Faixa: <span id="spnPJIRFaixa"></span></li>
+                                <li class="list-group-item">Imposto: R$<span id="spnPJIRDesconto"></span></li>
+                                <li class="list-group-item">Rendimento líquido: R$<span
+                                        id="spnPJIRRendimentoLiquido"></span>
+                                </li>
+                                <li class="list-group-item">Rendimento líquido (provisões): R$<span
+                                        id="spnPJIRRendimentoLiquidoProvisoes"></span>
+                                </li>
+                                <li class="list-group-item">Rendimento anual liquido: R$<span
+                                        id="spnPJRendimentoLiquidoAnual"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
