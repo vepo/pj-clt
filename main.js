@@ -107,9 +107,9 @@ window.onload = () => {
 
             let provisaoFerias = (salario * 1.3) / 11;
             let provisao13Salario = salario / 11;
-            let salarioLiquido = salario - provisaoFerias - provisao13Salario;
             let alicota = IMPOSTO_RENDA_PJ.filter(a => a.minino < salario).pop();
             let descontoIR = (salario * alicota.alicota) / 100;
+            let salarioLiquido = salario - provisaoFerias - provisao13Salario - descontoIR;
 
             spnPJQtdSalarioMinimos.textContent = formatNumber(salario / SALARIO_MINIMO)
             spnPJSalarioAnual.textContent = formatNumber(salario * 11);
